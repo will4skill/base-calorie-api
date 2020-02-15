@@ -27,6 +27,7 @@ var myService = {
 
 //body parser middleware are supported (optional)
 const port = 8001;
+app.use(cors());
 app.use(bodyParser.raw({type: function(){return true;}, limit: '5mb'}));
 app.listen(port, function(){
   //Note: /wsdl route will be handled by soap module
