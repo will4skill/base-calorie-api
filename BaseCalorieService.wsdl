@@ -48,7 +48,7 @@
       <documentation>WSDL File for BaseCalorie</documentation>
       <port binding = "tns:BaseCalorie_Binding" name = "BaseCalorie_Port">
          <soap:address
-            location = "https://peaceful-depths-74590.herokuapp.com/basecalorieservice?wsdl/" />
+            location = "https://peaceful-depths-74590.herokuapp.com/basecalorieservice/" />
       </port>
    </service>
 </definitions>
