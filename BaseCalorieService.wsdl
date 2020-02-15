@@ -13,7 +13,7 @@
    </message>
 
    <message name = "GetCaloriesResponse">
-      <part name = "calories" type = "xsd:string"/>
+      <part name = "calories" type = "xsd:integer"/>
    </message>
 
    <portType name = "BaseCalorie_PortType">
@@ -48,7 +48,7 @@
       <documentation>WSDL File for BaseCalorie</documentation>
       <port binding = "tns:BaseCalorie_Binding" name = "BaseCalorie_Port">
          <soap:address
-            location = "http://www.examples.com/GetCalories/" />
+            location = "http://localhost:8001/basecalorieservice/" />
       </port>
    </service>
 </definitions>

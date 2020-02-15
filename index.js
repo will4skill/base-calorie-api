@@ -13,7 +13,7 @@ var myService = {
     BaseCalorie_Port: {
       getCalories: function(args) {
         console.log('getCalories called');
-        let bmr = 10*args.weight_lbs['$value']/2.205 + 6.25*2.54*args.height_in['$value'] - 5*args.age_yrs['$value'];
+        let bmr = 10*args.weight_lbs/2.205 + 6.25*2.54*args.height_in - 5*args.age_yrs;
         if (args.sex === "f") {
           bmr -= 161;
         } else {
@@ -25,7 +25,7 @@ var myService = {
   }
 };
 
-const port = 8001;
+const port = process.env.PORT || 8001;
 // app.use(cors());
 app.listen(port, function(){
   console.log('server initialized');
