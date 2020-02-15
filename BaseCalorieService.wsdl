@@ -1,0 +1,54 @@
+<definitions name = "BaseCalorieService"
+   targetNamespace = "http://www.examples.com/wsdl/BaseCalorieService.wsdl"
+   xmlns = "http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns = "http://www.examples.com/wsdl/BaseCalorieService.wsdl"
+   xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+
+   <message name = "GetCaloriesRequest">
+      <part name = "sex" type = "xsd:string"/>
+      <part name = "age_yrs" type = "xsd:integer"/>
+      <part name = "height_in" type = "xsd:integer"/>
+      <part name = "weight_lbs" type = "xsd:integer"/>
+   </message>
+
+   <message name = "GetCaloriesResponse">
+      <part name = "calories" type = "xsd:integer"/>
+   </message>
+
+   <portType name = "BaseCalorie_PortType">
+      <operation name = "getCalories">
+         <input message = "tns:GetCaloriesRequest"/>
+         <output message = "tns:GetCaloriesResponse"/>
+      </operation>
+   </portType>
+
+   <binding name = "BaseCalorie_Binding" type = "tns:BaseCalorie_PortType">
+      <soap:binding style = "rpc"
+         transport = "http://schemas.xmlsoap.org/soap/http"/>
+      <operation name = "getCalories">
+         <soap:operation soapAction = "getCalories"/>
+         <input>
+            <soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:examples:basecalorieservice"
+               use = "encoded"/>
+         </input>
+
+         <output>
+            <soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:examples:basecalorieservice"
+               use = "encoded"/>
+         </output>
+      </operation>
+   </binding>
+
+   <service name = "BaseCalorie_Service">
+      <documentation>WSDL File for BaseCalorie</documentation>
+      <port binding = "tns:BaseCalorie_Binding" name = "BaseCalorie_Port">
+         <soap:address
+            location = "http://www.examples.com/GetCalories/" />
+      </port>
+   </service>
+</definitions>
