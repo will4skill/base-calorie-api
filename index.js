@@ -26,7 +26,7 @@ var myService = {
 };
 
 const port = process.env.PORT || 8001;
-// app.use(cors());
+app.use(cors());
 app.listen(port, function(){
   console.log('server initialized');
   console.log(`Listening on port ${port}`);
