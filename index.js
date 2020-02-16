@@ -13,7 +13,8 @@ var myService = {
     BaseCalorie_Port: {
       getCalories: function(args) {
         console.log('getCalories called');
-        let bmr = 10*args.weight_lbs/2.205 + 6.25*2.54*args.height_in - 5*args.age_yrs;
+        console.log(args.weight_lbs['$value']);
+        let bmr = 10*Number(args.weight_lbs['$value'])/2.205 + 6.25*2.54*Number(args.height_in['$value']) - 5*Number(args.age_yrs['$value']);
         if (args.sex === "f") {
           bmr -= 161;
         } else {

@@ -7,13 +7,13 @@
 
    <message name = "GetCaloriesRequest">
       <part name = "sex" type = "xsd:string"/>
-      <part name = "age_yrs" type = "xsd:integer"/>
-      <part name = "height_in" type = "xsd:integer"/>
-      <part name = "weight_lbs" type = "xsd:integer"/>
+      <part name = "age_yrs" type = "xsd:string"/>
+      <part name = "height_in" type = "xsd:string"/>
+      <part name = "weight_lbs" type = "xsd:string"/>
    </message>
 
    <message name = "GetCaloriesResponse">
-      <part name = "calories" type = "xsd:integer"/>
+      <part name = "calories" type = "xsd:string"/>
    </message>
 
    <portType name = "BaseCalorie_PortType">
