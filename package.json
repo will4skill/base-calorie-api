@@ -13,6 +13,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "google-spreadsheet": "^3.0.8",
     "http": "0.0.0",
     "soap": "^0.30.0",
     "strong-soap": "^1.22.0"
